@@ -13,11 +13,11 @@ function ResultTable(props) {
         </tr>
       </thead>
       <tbody>
-        {console.log(
+        {/* {console.log(
           yearData.savingsEndOfYear,
           props.initialInvestment,
           yearData.year
-        )}
+        )} */}
         {props.data.map((yearlyData) => (
           <tr key={yearlyData.year}>
             <td>{yearlyData.year}</td>

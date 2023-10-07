@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 const initialUserInput = {
-  "current-saving": 1000,
-  "yearly-contribution": 1200,
-  "expected-return": 7,
-  duration: 10,
+  "current-saving": null,
+  "yearly-contribution": null,
+  "expected-return": null,
+  duration: null,
 };
 function UserInput(props) {
   const [userInput, setUserInput] = useState(initialUserInput);
@@ -26,7 +26,12 @@ function UserInput(props) {
       };
     });
   };
-
+  {
+    console.log(typeof userInput["current-saving"]);
+    console.log(typeof userInput["yearly-contribution"]);
+    console.log(typeof userInput["expected-return"]);
+    console.log(typeof userInput["duration"]);
+  }
   return (
     <form onSubmit={submitHandler} className="form">
       <div className="input-group">

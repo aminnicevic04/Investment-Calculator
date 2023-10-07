@@ -18,19 +18,19 @@ function ResultTable(props) {
           props.initialInvestment,
           yearData.year
         )} */}
-        {props.data.map((yearlyData) => (
-          <tr key={yearlyData.year}>
-            <td>{yearlyData.year}</td>
-            <td>{yearlyData.savingsEndOfYear}</td>
-            <td>{yearlyData.yearlyInterest}</td>
+        {props.data.map((yearData) => (
+          <tr key={yearData.year}>
+            <td>{yearData.year}</td>
+            <td>{yearData.savingsEndOfYear}</td>
+            <td>{yearData.yearlyInterest}</td>
             <td>
-              {yearlyData.savingsEndOfYear -
+              {yearData.savingsEndOfYear -
                 props.initialInvestment -
-                yearlyData.yearlyContribution * yearlyData.year}
+                yearData.yearlyContribution * yearData.year}
             </td>
             <td>
               {props.initialInvestment +
-                yearlyData.yearlyContribution * yearlyData.year}
+                yearData.yearlyContribution * yearData.year}
             </td>
           </tr>
         ))}

@@ -12,7 +12,7 @@ function App() {
   const yearlyData = [];
 
   if (userInput) {
-    let currentSavings = +userInput["current-savings"];
+    let currentSavings = +userInput["current-saving"];
     const yearlyContribution = +userInput["yearly-contribution"];
     const expectedReturn = +userInput["expected-return"] / 100;
     const duration = +userInput["duration"];

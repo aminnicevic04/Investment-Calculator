@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 const initialUserInput = {
-  "current-saving": null,
-  "yearly-contribution": null,
-  "expected-return": null,
-  duration: null,
+  "current-saving": 0,
+  "yearly-contribution": 0,
+  "expected-return": 0,
+  duration: 0,
 };
 function UserInput(props) {
   const [userInput, setUserInput] = useState(initialUserInput);
@@ -22,7 +22,7 @@ function UserInput(props) {
     setUserInput((prevInput) => {
       return {
         ...prevInput,
-        [input]: value,
+        [input]: [+value],
       };
     });
   };
@@ -36,14 +36,15 @@ function UserInput(props) {
     <form onSubmit={submitHandler} className="form">
       <div className="input-group">
         <p>
-          <label htmlFor="current-savings">Current Savings ($)</label>
+          <label htmlFor="current-saving">Current Savings ($)</label>
           <input
             onChange={(event) =>
-              inputChangeHandler("current-savings", event.target.value)
+              inputChangeHandler("current-saving", event.target.value)
             }
             value={userInput["current-saving"]}
             type="number"
-            id="current-savings"
+            id="current-saving"
+            placeholder=""
           />
         </p>
         <p>
@@ -55,6 +56,7 @@ function UserInput(props) {
             value={userInput["yearly-contribution"]}
             type="number"
             id="yearly-contribution"
+            placeholder=""
           />
         </p>
       </div>
@@ -70,6 +72,7 @@ function UserInput(props) {
             value={userInput["expected-return"]}
             type="number"
             id="expected-return"
+            placeholder=""
           />
         </p>
         <p>
@@ -81,6 +84,7 @@ function UserInput(props) {
             value={userInput["duration"]}
             type="number"
             id="duration"
+            placeholder=""
           />
         </p>
       </div>

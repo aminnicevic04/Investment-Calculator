@@ -25,9 +25,10 @@ function ResultTable(props) {
               <td>{yearData.savingsEndOfYear.toFixed(2)}</td>
               <td>{yearData.yearlyInterest.toFixed(2)}</td>
               <td>
-                {yearData.savingsEndOfYear -
+                {yearData.savingsEndOfYear.toFixed(2) -
                   props.initialInvestment -
-                  yearData.yearlyContribution * yearData.year}
+                  yearData.yearlyContribution.toFixed(2) *
+                    yearData.year.toFixed(2)}
               </td>
               <td>
                 {props.initialInvestment +
